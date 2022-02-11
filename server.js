@@ -1,11 +1,11 @@
 global.fs = require('fs');
 global.require = require
 //1. For all files in the 'server' folder
-process.linesOfCode = fs.readdirSync("server").map(function(filename){
+process.linesOfCode = fs.readdirSync("server").filter(a => a.endsWith(".js")).map(function(filename){
 	//2. read them
 	return "//\x00"+filename+"\n"+fs.readFileSync('server/' + filename).toString()
-}).sort((b, a) => b.match(/^.*\n\/\/(\d+)|/)[1] - a.match(/^.*\n\/\/(\d)|/)[1]).join("\n") //3. and combine them together
-
+}).sort((b, a) => b.match(/^.*\n\/\/(\d+)|/)[1] - a.match(/^.*\n\/\/(\d+)|/)[1]).join("\n") //3. and combine them together
+fs.writeFileSync('final.js', process.linesOfCode)
 const completeFile = new Function(process.linesOfCode) //4. Create a function
 process.linesOfCode=process.linesOfCode.split("\n")
 process.fileIndex = []

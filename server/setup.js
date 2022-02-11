@@ -69,7 +69,12 @@ if(!meta || xy){
             sector.h2 = h / 2
             sector.time = 0
             let len = dat.readUint32LE(i + 4)
-            i += dat.readUint16LE(i) + dat.readUint16LE(i + 2) + 8
+						let sname = dat.readUint16LE(i)
+						let ip = dat.readUint16LE(i + 2)
+						i += 8
+						sname = ""+dat.slice(i, i += sname)
+            ip = ""+dat.slice(i, i += ip)
+						sector.name = sname
             let arr = []
             while(len--){
                 let id = dat.readUint16LE(i);i+=2
@@ -112,7 +117,7 @@ if(!meta || xy){
                 let name = (meta && meta.path.replace(/^\//,"")) || 'sectors/sector_'+Math.round(sx/1000)+'_'+Math.round(sx/1000)
                 fs.writeFileSync(name, arr.map(a=>Object.entries(a).map(a=>a.join(': ')).join('\n')).join('\n\n'))
                 if(xy)return process.exit(0)
-                fs.writeFileSync('meta', 'x: '+sx+'\ny: '+sy+'\nw: '+w+'\nh: '+h+'\nport: '+p+'\npath: '+name)
+                fs.writeFileSync('meta', 'x: '+sx+'\ny: '+sy+'\nw: '+w+'\nh: '+h+'\nport: '+p+'\npath: '+name+'\nname: '+sname)
                 setInterval(tick.bind(undefined, sector), 1000 / FPS)
                 server.bind(p)
             }
@@ -134,6 +139,7 @@ if(!meta || xy){
         sector.w2 = sector.w / 2
         sector.h2 = sector.h / 2
         sector.time = 0
+				sector.name = meta.name
         let data = readfile(meta.path.replace(/^\//,""))
         data.forEach(function(item){
             if(item.id)sector.objects.push(new Asteroid(item))

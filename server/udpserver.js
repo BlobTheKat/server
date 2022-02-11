@@ -72,6 +72,7 @@ server.on('message', async function(m, remote) {
                 buf[i++] = b
                 send(buf)
                 cli.crits[message.critical-256] = buf
+								broadcast({title: `User "${name}" joined`, color: 0x2255EE, fields: [{name: "sector", value: sector.name || `(${Math.round(sector.x/1000)}, ${Math.round(sector.y/1000)})`}, {name: "online", value: clients.size+""}]})
             })
         }catch(e){
             console.log(e)

@@ -133,6 +133,7 @@ class ClientData extends Physics{
   wasDestroyed(){
     clearTimeout(this.u)
     clients.delete(this.remote)
+		broadcast({title: `User "${this.name}" left`, color: 0xEE5522, fields: [{name: "sector", value: sector.name || `(${Math.round(sector.x/1000)}, ${Math.round(sector.y/1000)})`}, {name: "online", value: clients.size+""}]})
     sector.objects[sector.objects.indexOf(this)]=EMPTY
     while(sector.objects[sector.objects.length-1]==EMPTY)sector.objects.pop()
     delete clientKeys[this.i]
