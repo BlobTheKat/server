@@ -1,0 +1,767 @@
+radius: 291
+x: -8226
+y: 5678
+mass: 140500
+spin: -0.0020000000949949026
+superhot: 1
+richness: 0.1
+resource: name:100
+
+radius: 621
+x: -19814
+y: -2075
+mass: 248400
+spin: 0.000699999975040555
+superhot: 1
+richness: 0.1
+resource: name:100
+
+radius: 476
+x: 9358
+y: -6948
+mass: 119000
+spin: -0.000699999975040555
+superhot: 1
+richness: 0.1
+resource: name:100
+
+radius: 365
+x: 14990
+y: 4340
+mass: 91250
+spin: 0
+superhot: 1
+richness: 0.1
+resource: name:100
+
+radius: 627
+x: -227
+y: -7763
+mass: 156750
+spin: 0
+superhot: 1
+richness: 0.1
+resource: name:100
+
+radius: 525
+x: 7196
+y: -912
+mass: 210000
+spin: 0
+superhot: 1
+richness: 0.1
+resource: name:100
+
+radius: 292
+x: -20101
+y: 7178
+mass: 73000
+spin: 0
+superhot: 1
+richness: 0.1
+resource: name:100
+
+radius: 420
+x: -5889
+y: 7454
+mass: 105000
+spin: 0
+superhot: 1
+richness: 0.1
+resource: name:100
+
+radius: 290
+x: -15430
+y: 7883
+mass: 72500
+spin: 0
+superhot: 1
+richness: 0.1
+resource: name:100
+
+radius: 165
+x: -7170
+y: -10478
+mass: 16500
+spin: 0.006000000052154064
+superhot: 1
+richness: 0.1
+resource: name:100
+
+radius: 775
+x: 7080
+y: -13348
+mass: 387500
+spin: -0.004000000189989805
+superhot: 1
+richness: 0.1
+resource: name:100
+
+radius: 355
+x: -12686
+y: 1540
+mass: 88750
+spin: 0
+superhot: 1
+richness: 0.1
+resource: name:100
+
+radius: 455
+x: 10390
+y: 10050
+mass: 113750
+spin: 0
+superhot: 1
+richness: 0.1
+resource: name:100
+
+radius: 246
+x: 13683
+y: 7061
+mass: 61500
+spin: 0
+superhot: 1
+richness: 0.1
+resource: name:100
+
+radius: 684
+x: -7040
+y: 21440
+mass: 171000
+spin: 0
+superhot: 1
+richness: 0.1
+resource: name:100
+
+radius: 220
+x: 7590
+y: 19410
+mass: 55000
+spin: 0
+superhot: 1
+richness: 0.1
+resource: name:100
+
+radius: 277
+x: 13490
+y: 20310
+mass: 69250
+spin: 0
+superhot: 1
+richness: 0.1
+resource: name:100
+
+radius: 217
+x: 21230
+y: 1480
+mass: 54250
+spin: 0
+superhot: 1
+richness: 0.1
+resource: name:100
+
+radius: 228
+x: -20020
+y: 19860
+mass: 11400
+spin: 0
+superhot: 1
+richness: 0.1
+resource: name:100
+
+radius: 621
+x: -11240
+y: -18350
+mass: 155250
+spin: 0.000699999975040555
+superhot: 1
+richness: 0.1
+resource: name:100
+
+radius: 476
+x: -10240
+y: -11280
+mass: 119000
+spin: -0.000699999975040555
+superhot: 1
+richness: 0.1
+resource: name:100
+
+radius: 365
+x: -18560
+y: 10100
+mass: 91250
+spin: 0
+superhot: 1
+richness: 0.1
+resource: name:100
+
+radius: 627
+x: 111
+y: 6462
+mass: 156750
+spin: 0
+superhot: 1
+richness: 0.1
+resource: name:100
+
+radius: 800
+x: 10
+y: -1240
+mass: 500000
+spin: 0.0010000000474974513
+superhot: 1
+richness: 0.1
+resource: name:100
+
+radius: 274
+x: 4151
+y: 2706
+mass: 68500
+spin: 0.0010000000474974513
+superhot: 0
+richness: 0.1
+resource: name:100
+
+radius: 298
+x: 6813
+y: -9570
+mass: 74500
+spin: 0.0010000000474974513
+superhot: 0
+richness: 0.1
+resource: name:100
+
+radius: 226
+x: -12482
+y: -3971
+mass: 56500
+spin: -0.0010000000474974513
+superhot: 0
+richness: 0.1
+resource: name:100
+
+radius: 213
+x: -268
+y: -16688
+mass: 53250
+spin: -0.0006000000284984708
+superhot: 0
+richness: 0.1
+resource: name:100
+
+radius: 278
+x: -4419
+y: 2705
+mass: 69500
+spin: 0.00039999998989515007
+superhot: 0
+richness: 0.1
+resource: name:100
+
+radius: 237
+x: -4374
+y: -13267
+mass: 59250
+spin: 0.003000000026077032
+superhot: 0
+richness: 0.1
+resource: name:100
+
+radius: 417
+x: 4314
+y: 9464
+mass: 104250
+spin: 0.0020000000949949026
+superhot: 0
+richness: 0.1
+resource: name:100
+
+radius: 270
+x: -4314
+y: -5306
+mass: 67500
+spin: -0.0010000000474974513
+superhot: 0
+richness: 0.1
+resource: name:100
+
+radius: 247
+x: 13436
+y: 3181
+mass: 61750
+spin: -0.0006000000284984708
+superhot: 0
+richness: 0.1
+resource: name:100
+
+radius: 172
+x: 3764
+y: -12976
+mass: 43000
+spin: 0.001500000013038516
+superhot: 0
+richness: 0.1
+resource: name:100
+
+radius: 300
+x: 4062
+y: -5205
+mass: 75000
+spin: -0.001500000013038516
+superhot: 0
+richness: 0.1
+resource: name:100
+
+radius: 223
+x: 2069
+y: 10903
+mass: 55750
+spin: 0.004999999888241291
+superhot: 0
+richness: 0.1
+resource: name:100
+
+radius: 380
+x: 15185
+y: 14081
+mass: 95000
+spin: -0.0008999999845400453
+superhot: 0
+richness: 0.1
+resource: name:100
+
+radius: 276
+x: -10453
+y: 3584
+mass: 69000
+spin: 0.00009999999747378752
+superhot: 0
+richness: 0.1
+resource: name:100
+
+radius: 400
+x: 11712
+y: -4519
+mass: 100000
+spin: -0.0006000000284984708
+superhot: 0
+richness: 0.1
+resource: name:100
+
+radius: 408
+x: 13932
+y: -826
+mass: 102000
+spin: 0.003000000026077032
+superhot: 0
+richness: 0.1
+resource: name:100
+
+radius: 251
+x: -12113
+y: 10969
+mass: 62750
+spin: 0
+superhot: 0
+richness: 0.1
+resource: name:100
+
+radius: 267
+x: 7500
+y: 13420
+mass: 66750
+spin: -0.0020000000949949026
+superhot: 0
+richness: 0.1
+resource: name:100
+
+radius: 177
+x: 11304
+y: 2844
+mass: 44250
+spin: 0.000699999975040555
+superhot: 0
+richness: 0.1
+resource: name:100
+
+radius: 318
+x: -1650
+y: 11320
+mass: 79500
+spin: 0
+superhot: 0
+richness: 0.1
+resource: name:100
+
+radius: 270
+x: -14189
+y: -1192
+mass: 67500
+spin: 0
+superhot: 0
+richness: 0.1
+resource: name:100
+
+radius: 376
+x: -3519
+y: 9559
+mass: 94000
+spin: 0
+superhot: 0
+richness: 0.1
+resource: name:100
+
+radius: 267
+x: -12260
+y: 15470
+mass: 66750
+spin: 0
+superhot: 0
+richness: 0.1
+resource: name:100
+
+radius: 267
+x: 21000
+y: 9500
+mass: 66750
+spin: 0
+superhot: 0
+richness: 0.1
+resource: name:100
+
+radius: 198
+x: 5800
+y: 8250
+mass: 49500
+spin: 0
+superhot: 0
+richness: 0.1
+resource: name:100
+
+radius: 209
+x: 15864
+y: 1502
+mass: 52250
+spin: 0
+superhot: 0
+richness: 0.1
+resource: name:100
+
+radius: 248
+x: 18592
+y: 15206
+mass: 62000
+spin: 0
+superhot: 0
+richness: 0.1
+resource: name:100
+
+radius: 278
+x: 9024
+y: 5523
+mass: 69500
+spin: 0
+superhot: 0
+richness: 0.1
+resource: name:100
+
+radius: 363
+x: -310
+y: 17050
+mass: 90750
+spin: 0
+superhot: 0
+richness: 0.1
+resource: name:100
+
+radius: 303
+x: 21520
+y: -4370
+mass: 75750
+spin: 0
+superhot: 0
+richness: 0.1
+resource: name:100
+
+radius: 380
+x: -6800
+y: 15670
+mass: 95000
+spin: 0.0006000000284984708
+superhot: 0
+richness: 0.1
+resource: name:100
+
+radius: 276
+x: 20500
+y: 19230
+mass: 69000
+spin: 0.0006000000284984708
+superhot: 0
+richness: 0.1
+resource: name:100
+
+radius: 400
+x: -21308
+y: -7653
+mass: 100000
+spin: 0.0006000000284984708
+superhot: 0
+richness: 0.1
+resource: name:100
+
+radius: 408
+x: 15355
+y: -15314
+mass: 102000
+spin: -0.0006000000284984708
+superhot: 0
+richness: 0.1
+resource: name:100
+
+radius: 251
+x: -50
+y: 12962
+mass: 62750
+spin: 0.0006000000284984708
+superhot: 0
+richness: 0.1
+resource: name:100
+
+radius: 270
+x: 12470
+y: -20790
+mass: 67500
+spin: -0.0010000000474974513
+superhot: 0
+richness: 0.1
+resource: name:100
+
+radius: 247
+x: 18850
+y: -9940
+mass: 61750
+spin: -0.0006000000284984708
+superhot: 0
+richness: 0.1
+resource: name:100
+
+radius: 172
+x: 20820
+y: -19830
+mass: 43000
+spin: 0.001500000013038516
+superhot: 0
+richness: 0.1
+resource: name:100
+
+radius: 300
+x: 12210
+y: 16850
+mass: 75000
+spin: -0.001500000013038516
+superhot: 0
+richness: 0.1
+resource: name:100
+
+radius: 223
+x: 17940
+y: 22860
+mass: 55750
+spin: 0.0006000000284984708
+superhot: 0
+richness: 0.1
+resource: name:100
+
+radius: 208
+x: 3090
+y: -20075
+mass: 52000
+spin: 0.0006000000284984708
+superhot: 0
+richness: 0.1
+resource: name:100
+
+radius: 208
+x: -10172
+y: -7189
+mass: 52000
+spin: 0.0006000000284984708
+superhot: 0
+richness: 0.1
+resource: name:100
+
+radius: 376
+x: -20630
+y: -12690
+mass: 94000
+spin: -0.0020000000949949026
+superhot: 0
+richness: 0.1
+resource: name:100
+
+radius: 267
+x: -22720
+y: -19600
+mass: 66750
+spin: 0.00015999999595806003
+superhot: 0
+richness: 0.1
+resource: name:100
+
+radius: 267
+x: -15674
+y: -9172
+mass: 66750
+spin: -0.0006000000284984708
+superhot: 0
+richness: 0.1
+resource: name:100
+
+radius: 198
+x: -14000
+y: -14000
+mass: 49500
+spin: 0.0006000000284984708
+superhot: 0
+richness: 0.1
+resource: name:100
+
+radius: 209
+x: -17180
+y: -21610
+mass: 52250
+spin: 1.000000013351432e-10
+superhot: 0
+richness: 0.1
+resource: name:100
+
+radius: 525
+x: -7344
+y: -956
+mass: 210000
+spin: 0
+superhot: 1
+richness: 0
+resource: name:100
+
+id: 7
+x: 4320
+y: 660
+dx: 0
+dy: 0
+
+id: 2
+x: -2000
+y: 500
+dx: 0
+dy: 0
+
+id: 3
+x: -420
+y: -4110
+dx: 0
+dy: 0
+
+id: 4
+x: 1462
+y: 2772
+dx: 0
+dy: 0
+
+id: 6
+x: -4790
+y: -3077
+dx: 0
+dy: 0
+
+id: 2
+x: -503
+y: 1880
+dx: 0
+dy: 0
+
+id: 1
+x: 3028
+y: -686
+dx: 0
+dy: 0
+
+id: 1
+x: -4066
+y: -1274
+dx: 0
+dy: 0
+
+id: 5
+x: 4854
+y: -2301
+dx: 0
+dy: 0
+
+id: 2
+x: 1941
+y: -5289
+dx: 0
+dy: 0
+
+id: 1
+x: -2118
+y: -5123
+dx: 0
+dy: 0
+
+id: 1
+x: -4020
+y: 642
+dx: 0
+dy: 0
+
+id: 3
+x: -2903
+y: -2678
+dx: 0
+dy: 0
+
+id: 1
+x: 1700
+y: 1125
+dx: 0
+dy: 0
+
+id: 1
+x: -2420
+y: 2272
+dx: 0
+dy: 0
+
+id: 1
+x: 2892
+y: -2859
+dx: 0
+dy: 0
+
+id: 1
+x: 1458
+y: -3659
+dx: 0
+dy: 0
+
+id: 4
+x: 160
+y: -5757
+dx: 0
+dy: 0
+
+id: 1
+x: -1167
+y: -5923
+dx: 0
+dy: 0
+
+id: 1
+x: -1998
+y: -3644
+dx: 0
+dy: 0
