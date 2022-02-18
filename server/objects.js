@@ -22,14 +22,14 @@ class Planet{
   }
   heal(){
     this.data.health += 4096
-		let t = this
+    let t = this
     let stop = setInterval(function(){
       t.data.health += 64
       if(t.data.health > 8190){
-        stop()
+        clearInterval(stop)
         t.data.health = 4095
       }
-    }, 30)
+    }, 30000)
   }
   toBuf(buf, id, pid){
     if(!this.data)return
