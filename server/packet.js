@@ -217,7 +217,7 @@ let msgs = {
         if(!i || (planet.data.items = planet.data.items || {})[x])return res.code(ERR.MAKEITEM).send()
         let num = 0
         for(itm in planet.data.items)if(planet.data.items[itm].id == i)num++
-        if(num >= (planet.data.camplvl - ITEMS[i][0].available)/ITEMS[i][0].every + 1)return res.code(ERR.MAKEITEM).send()
+        if(num > (planet.data.camplvl - ITEMS[i][0].available)/ITEMS[i][0].every)return res.code(ERR.MAKEITEM).send()
         let dat = ITEMS[i][1]
         if(!this.take(dat.price, dat.price2))return res.code(ERR.MAKEITEM).send()
 				this.mission("build", 1)
