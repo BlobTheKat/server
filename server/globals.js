@@ -35,10 +35,10 @@ const missionStats = {
   build: readfile("behaviour/missions/build"), //coloItems
   drill: readfile("behaviour/missions/drill"), //upgrade to lvl
   canon: readfile("behaviour/missions/canon"), //upgrade to lvl
-  kills: readfile("behaviour/missions/kills"),
+  //kills: readfile("behaviour/missions/kills"),
   energy: readfile("behaviour/missions/energy"),
-  research: readfile("behaviour/missions/research"),
-  gems: readfile("behaviour/missions/gems"),
+  //research: readfile("behaviour/missions/research"),
+  //gems: readfile("behaviour/missions/gems"),
   flybys: readfile("behaviour/missions/flybys"),
   visit: readfile("behaviour/missions/visit"),
 }
