@@ -51,6 +51,7 @@ server.on('message', async function(m, remote) {
                 Object.fallback(a, PLAYERDATA)
                 cli.ready(0, 0, 0, w)
                 cli.data = a
+								cli.data.name = name
 								if(cli.data.banned){
 									send(Buffer.concat([Buffer.of(127), strbuf(cli.data.banned)]), cli.remote)
         					cli.wasDestroyed()
@@ -106,7 +107,7 @@ server.on('message', async function(m, remote) {
 				for(let i of process.fileIndex){
 					if(i[1] > line)break
 					name = i[0]
-                    l = i[1]
+          l = i[1]
 				}
 				m = "\n\x1b[34;4m" + name + ":" + (line-l) + ":" + pos + "\n" + m
 			});
