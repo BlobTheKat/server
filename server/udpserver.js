@@ -51,6 +51,11 @@ server.on('message', async function(m, remote) {
                 Object.fallback(a, PLAYERDATA)
                 cli.ready(0, 0, 0, w)
                 cli.data = a
+								if(cli.data.banned){
+									send(Buffer.concat([Buffer.of(127), strbuf(cli.data.banned)]), cli.remote)
+        					cli.wasDestroyed()
+									return
+								}
 								cli.mission("visit", 1)
                 clients.set(address, cli)
                 let buf = Buffer.alloc(22 + Math.ceil(sector.planets.length / 8))

@@ -39,7 +39,7 @@ const missionStats = {
   energy: readfile("behaviour/missions/energy"),
   //research: readfile("behaviour/missions/research"),
   //gems: readfile("behaviour/missions/gems"),
-  flybys: readfile("behaviour/missions/flybys"),
+  //flybys: readfile("behaviour/missions/flybys"),
   visit: readfile("behaviour/missions/visit"),
 }
 let missions = Object.keys(missionStats)
