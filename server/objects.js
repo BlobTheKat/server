@@ -71,9 +71,9 @@ class Planet{
         earned += ITEMS[1][itm.lvl].persec || 0
         cap += ITEMS[1][itm.lvl].storage || 0
         break
-        case 3:
-        earned2 += ITEMS[3][itm.lvl].persec || 0
-        cap2 += ITEMS[3][itm.lvl].storage || 0
+        case 4:
+        earned2 += ITEMS[4][itm.lvl].persec || 0
+        cap2 += ITEMS[4][itm.lvl].storage || 0
         break
       }
     }
