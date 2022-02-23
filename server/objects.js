@@ -114,8 +114,10 @@ class Asteroid extends Physics{
   }
   respawn(){
 		let self = this
+		let id = this.id
 		this.id = 0
 		setTimeout(function(){
+			self.id = id
 			self.health = self.mass / 10
 			self.x = self.respawnstate[0]
 			self.y = self.respawnstate[1]
