@@ -6,10 +6,8 @@ function _(_){
     return eval(_)
 }
 let meta = (readfile('meta')||[]).find(a=>(a.port||a.ip.split(":")[1])==process.argv[2]) || null
-let xy = (process.argv[3]||"_NaN_NaN").slice(1).split("_").map(a=>+a)
-if(xy[0] != xy[0] || xy[1] != xy[1])xy=null
-if(process.argv[2] && !xy && !meta){process.exit(0)}
-if(!meta || xy){
+if(process.argv[2] && !meta){process.exit(0)}
+if(!meta){
     if(typeof RESPONSE == "undefined")console.log("\x1b[31m[Error]\x1b[37m To set up this server, you need to install basic-repl. Type this in the bash shell: \x1b[m\x1b[34mnpm i basic-repl\x1b[m"),process.exit(0)
     console.log("Enter sector \x1b[33mX\x1b[m:")
     let x;
@@ -116,20 +114,15 @@ if(!meta || xy){
                 if(+p != +p || p > 65535 || p < 0)return console.log("Enter \x1b[33mPORT\x1b[m:"), RESPONSE = _u
                 let name = (meta && meta.path.replace(/^\//,"")) || 'sectors/sector_'+Math.round(sx/1000)+'_'+Math.round(sy/1000)
                 fs.writeFileSync(name, arr.map(a=>Object.entries(a).map(a=>a.join(': ')).join('\n')).join('\n\n'))
-                if(xy)return process.exit(0)
                 fs.writeFileSync('meta', 'x: '+sx+'\ny: '+sy+'\nw: '+w+'\nh: '+h+'\nport: '+p+'\npath: '+name+'\nname: '+sname)
                 setInterval(tick.bind(undefined, sector), 1000 / FPS)
                 server.bind(p)
             }
-            let p = process.argv[2]
-            if(xy && +p == +p && p <= 65535 && p >= 0)_u(p);
-            else if(xy)throw new Error('Invalid port')
-            else RESPONSE = _u
+            RESPONSE = _u
         }
         return '\x1b[1A'
     }
     RESPONSE = _w
-    if(xy)setImmediate(a=>(RESPONSE(xy[0]),RESPONSE(xy[1]),RESPONSE=null))
 }else{
     setImmediate(function(){
         sector.w = meta.w
