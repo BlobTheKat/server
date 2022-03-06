@@ -5,7 +5,7 @@
   "main": "server.js",
   "dependencies": {
     "basic-repl": "^1.1.2",
-    "buf.js": "^1.0.4",
+    "buf.js": "^1.0.7",
     "discord.js": "^13.6.0",
     "express": "^4.17.1",
     "gamecenter-identity-verifier": "^0.1.1",

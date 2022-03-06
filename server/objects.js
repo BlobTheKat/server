@@ -40,7 +40,7 @@ class Planet{
     buf.float(this.data.inbank || 0)
     buf.float(this.data.inbank2 || 0)
     buf.byte((this.data.name || "").length + (this.data.health > 4095 ? 128 : 0))
-    buf.buffer(Buffer.from(this.data.name || ""))
+    buf.bytes(Buffer.from(this.data.name || ""))
     let k = Object.keys(it)
     if(k.length == 0)return buf.byte((this.data.owner ? 160 : 32) + ((!this.data.owner && !this.superhot) || this.data.owner == pid ? 64 : 0))
     buf.byte((this.data.owner ? 128 : 0) + ((!this.data.owner && !this.superhot) || this.data.owner == pid ? 64 : 0))

@@ -1,6 +1,7 @@
 let fs = require('fs'), fetch = require('node-fetch')
 const REGIONSIZE = 500e3
 ;(async (rx, ry, IP) => {
+	if(!rx || !ry)process.exit(0)
 	let dat = await fetch('https://raw.githubusercontent.com/BlobTheKat/data/master/'+rx+'_'+ry+'.region').then(a=>a.buffer())
 	let i = 0
 	let metastr = ""

@@ -27,9 +27,9 @@ server.on('message', async function(m, remote) {
             let len = message.ubyte()
             let publicKeyUrl = message.str(len)
             len = message.ushort()
-            let signature = Buffer.from(message.buffer(len)).toString("base64")
+            let signature = Buffer.from(message.bytes(len)).toString("base64")
             len = message.ubyte()
-            let salt = Buffer.from(message.buffer(len)).toString("base64")
+            let salt = Buffer.from(message.bytes(len)).toString("base64")
             len = message.ubyte()
             let playerId = message.str(len)
             let timestamp = message.uint() + message.uint() * 4294967296
