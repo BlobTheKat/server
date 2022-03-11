@@ -1,0 +1,17 @@
+available: 7
+every: 2
+
+price2: 200
+time: 8h
+damage: 30
+linereach: 200
+
+price2: 2000
+time: 12h
+damage: 50
+linereach: 300
+
+price2: 10000
+time: 18h
+damage: 70
+linereach: 350

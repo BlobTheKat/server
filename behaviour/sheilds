@@ -1,0 +1,12 @@
+every: 500
+available: 8
+
+price2: 5000
+time: 1d
+len: 4s
+damage: 10
+
+price2: 50000
+time: 3d
+len: 7s
+damage: 20

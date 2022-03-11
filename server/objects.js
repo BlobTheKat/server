@@ -10,7 +10,7 @@ class Planet{
     this.superhot = dict.superhot
     this.filename = "pdata/" + (sector.x + this.x) + "_" + (sector.y + this.y) + ".json"
     let dat = null
-    if(dict.resource)try{dat = JSON.parse(fs.readFileSync(this.filename))}catch(e){dat = null}
+    try{dat = JSON.parse(fs.readFileSync(this.filename))}catch(e){dat = null}
     [this.name, this.price = 0, this.price2 = 0] = dict.resource ? dict.resource.split(":") : []
     this.price *= 1
     this.price2 *= 1

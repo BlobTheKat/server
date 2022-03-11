@@ -1,11 +1,17 @@
-path: /townhalls
+path: /camps
 
 path: /drills
 
-path: /shooters
+path: /canons
 
 path: /satellites
 
-path: /dishes
+path: /labs
 
-path: /electro
+path: /electros
+
+path: /crushers
+
+path: /bombs
+
+path: /sheilds
