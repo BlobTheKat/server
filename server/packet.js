@@ -36,7 +36,7 @@ function processData(data, res){
             let obj = sector.objects[x - (x <= this.ix)]
             let name = (obj && obj.name) || ""
             buf.int(x)
-            buf.buffer(strbuf(name))
+            buf.bytes(strbuf(name))
         }
         res.send(buf.toBuf())
     }
