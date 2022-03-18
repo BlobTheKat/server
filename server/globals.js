@@ -113,9 +113,6 @@ try{RESPONSE = null;require('basic-repl')('$',v=>([RESPONSE,RESPONSE=null][0]||_
   console.log("\x1b[33m[Warning]\x1b[37m If you would like to manage this server from the console, you need to install basic-repl. Type this in the bash shell: \x1b[m\x1b[34mnpm i basic-repl\x1b[m")
 }
 
-
-
-
 //Unsaved planet data
 const unsaveds = {}
 setInterval(function(){

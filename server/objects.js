@@ -28,6 +28,7 @@ class Planet{
       if(t.data.health > 8190){
         clearInterval(stop)
         t.data.health = 4095
+				t.queuesave()
       }
     }, 30000)
   }
@@ -81,10 +82,13 @@ class Planet{
     this.data.last = this.data.last || Math.floor(NOW - 60)
     let diff = Math.floor(NOW - this.data.last)
     this.data.last += diff
-    unsaveds[this.filename] = this.data
+    this.queuesave()
     this.data.inbank = Math.min(cap, (this.data.inbank || 0) + Math.round(diff * earned))
     this.data.inbank2 = Math.min(cap2, (this.data.inbank2 || 0) + Math.round(earned2 * diff))
   }
+	queuesave(){
+		unsaveds[this.filename] = this.data
+	}
 }
 
 class Asteroid extends Physics{

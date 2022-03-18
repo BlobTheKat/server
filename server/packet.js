@@ -63,6 +63,7 @@ function processData(data, res){
                     }
                     if(p.data.items[i].id < 128)p.data.items[i].id += 128
                 }
+								p.queuesave()
             }
         }
     }
@@ -133,7 +134,7 @@ let msgs = {
         if(!planet || (planet.data && planet.data.owner) || planet.superhot)return res.code(ERR.PLANETBUY).send()
         if(!this.take(100**this.data.stats.planets))return res.code(ERR.PLANETBUY).send()
         planet.data = {owner: this.playerid, name: this.name, items: {0: {id: 0, lvl: 1, cap: 0}}, health: 4095, camplvl: 1}
-        unsaveds[planet.filename] = planet.data
+				planet.queuesave()
         this.mission("planets", 1)
         res.double(this.data.bal)
         res.float(this.data.bal2)
@@ -174,6 +175,7 @@ let msgs = {
             planet.data.items[y] = planet.data.items[x]
             delete planet.data.items[x]
             if(planet.data.items[y].id == 0)planet.data.camp = y
+						planet.queuesave()
         }else{
             //lvlup
             let item = planet.data.items[x]
@@ -186,7 +188,7 @@ let msgs = {
             if(item.id===2)this.mission("canon",1)
             planet.collect()
             item.finish = (NOW + dat.time) >>> 0
-            unsaveds[planet.filename] = planet.data
+            planet.queuesave()
         }
         res.double(this.data.bal)
         res.float(this.data.bal2)
@@ -222,7 +224,7 @@ let msgs = {
         if(!this.take(dat.price, dat.price2))return res.code(ERR.MAKEITEM).send()
 				this.mission("build", 1)
         planet.data.items[x] = {id: i, lvl: 0, cap: 0, finish: (NOW + dat.time) >>> 0}
-        unsaveds[planet.filename] = planet.data
+        planet.queuesave()
         res.double(this.data.bal)
         res.float(this.data.bal2)
         res.code(RESP.MAKEITEM).send()
@@ -239,7 +241,7 @@ let msgs = {
         this.data.gems -= price
         planet.collect()
         item.finish = 1 //skip
-        unsaveds[planet.filename] = planet.data
+        planet.queuesave()
         res.float(this.data.gems)
         res.code(RESP.SKIPBUILD).send()
     },
@@ -251,11 +253,11 @@ let msgs = {
         if(!planet.data.items || !planet.data.items[x] || planet.data.items[x].id < 128)return res.code(ERR.REPAIR).send()
         let item = planet.data.items[x]
         let {price, price2, time} = ITEMS[item.id-128][item.lvl]
-        if(!this.take((price||0) * 1.5, (price2||0) * 1.5))return res.code(ERR.REPAIR).send()
+        if(!this.take(price||0, price2||0))return res.code(ERR.REPAIR).send()
         item.id -= 128
         item.lvl--
         item.finish = Math.floor(NOW + (time || 0) * 0.5)
-        unsaveds[planet.filename] = planet.data
+        planet.queuesave()
         res.double(this.data.bal)
         res.float(this.data.bal2)
         res.code(RESP.REPAIR).send()
@@ -267,7 +269,7 @@ let msgs = {
         if(planet.data.health > 4095)return
         if(!this.take(Math.floor(10000 - (planet.data.health>>4)*39.0625)))return res.code(ERR.RESTORE).send()
         planet.heal()
-        unsaveds[planet.filename] = planet.data
+        planet.queuesave()
         res.double(this.data.bal)
         res.code(RESP.RESTORE).send()
     }
