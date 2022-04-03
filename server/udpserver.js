@@ -59,7 +59,7 @@ server.on('message', async function(m, remote) {
 								}
 								cli.mission("visit", 1)
                 clients.set(address, cli)
-                let buf = Buffer.alloc(22 + Math.ceil(sector.planets.length / 8))
+                let buf = Buffer.alloc(26 + Math.ceil(sector.planets.length / 8))
                 buf[0] = 129
                 buf[1] = message.critical
                 buf.writeDoubleLE(cli.data.bal || 0, 2)
@@ -77,6 +77,7 @@ server.on('message', async function(m, remote) {
                 }
                 while(b < 255)b <<= 1
                 buf[i++] = b
+								buf.writeFloatLE(sector.time, buf.length - 4)
                 send(buf)
                 cli.crits[message.critical-256] = buf
 								broadcast({title: `User "${name}" joined`, color: 0x2255EE, fields: [{name: "sector", value: sector.name || `(${Math.round(sector.x/1000)}, ${Math.round(sector.y/1000)})`}, {name: "online", value: clients.size+""}]})

@@ -3,20 +3,20 @@ every: 4
 
 price: 500k
 time: 16h
-push: 50
+push: 80
 spins: 0.4
 
 price: 1.5M
 time: 1d
-push: 80
+push: 120
 spins: 0.7
 
 price: 3M
 time: 2d
-push: 120
+push: 160
 spins: 1
 
 price: 6M
 time: 4d
-push: 180
+push: 200
 spins: 1.4

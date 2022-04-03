@@ -1,11 +1,14 @@
 //11
-const URL = fs.readFileSync('../discord.txt') + ""
+let broadcast = () => {}
+try{
+	const URL = fs.readFileSync('../discord.txt') + ""
 
 
-const {WebhookClient} = require("discord.js")
+	const {WebhookClient} = require("discord.js")
 
-const client = new WebhookClient({url: URL})
+	const client = new WebhookClient({url: URL})
 
-const broadcast = (...embeds) => {
-	client.send({embeds})
-}
+	broadcast = (...embeds) => {
+		client.send({embeds})
+	}
+}catch(e){}
