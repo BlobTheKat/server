@@ -49,7 +49,7 @@ function processData(data, res){
             if(p.data.health < 1){
                 //destroyed
                 p.data.health = 2048
-                //TODO: remove 1 from planet stats of old owner
+                writeInbox(p.data.owner, "planetlost")
                 p.data.owner = this.playerid
                 p.data.name = this.name
                 this.mission("steal", 1)

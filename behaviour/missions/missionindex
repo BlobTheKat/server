@@ -10,4 +10,4 @@ energy: Collect % energy
 research: Collect % research points
 gems: Find % gems
 flybys: Fly by % stars
-visit: Visit % sectors
+visit: Travel sectors % times

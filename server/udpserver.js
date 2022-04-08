@@ -47,11 +47,12 @@ server.on('message', async function(m, remote) {
             }else playerId = playerId.slice(3).toLowerCase() //not guest, lowercase
             //fetch DB stuff
             let cli = new ClientData(name, playerId, address)
-            fetchdata(playerId).then(a => {
+            fetchdata(playerId).then(([a, ibx]) => {
                 Object.fallback(a, PLAYERDATA)
                 cli.ready(0, 0, 0, w)
                 cli.data = a
 								cli.data.name = name
+								inbox(cli, ibx)
 								if(cli.data.banned){
 									send(Buffer.concat([Buffer.of(127), strbuf(cli.data.banned)]), cli.remote)
         					cli.wasDestroyed()
