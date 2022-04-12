@@ -8,11 +8,12 @@ async function fetchdata(id){
 		//this is faster and more convenient than, for example, SQL or some 3rd party hosted database
 	try{
 		let dat = await new Promise((r, t) => fs.readFile("users/" + id, {}, (err, dat) => err ? t(err) : r(dat)))
-		let dat2 = await new Promise((r, t) => fs.readFile("inboxes/" + id, {}, (err, dat) => err ? r({}) : r(dat)))
+		let dat2 = await new Promise(r => fs.readFile("inboxes/" + id, {}, (err, dat) => err ? r('{}') : r(dat)))
 		let r = [JSON.parse(dat), JSON.parse(dat2)] //send data
 		fs.unlink("inboxes/"+id, () => {})
 		return r
 	}catch(e){
+		console.log(e)
 		return [{},{}] //If no/corrupt file, then send empty object
 	}
 }
