@@ -78,6 +78,8 @@ const EMPTY = {toBuf(a){a.int(0);a.int(0);a.int(0);a.int(0)},updatep(thing){},up
 //Sector
 let sector = {objects:[],planets:[],time:0,w:0,h:0}
 
+const PACKPRICES = [0, 500, 300, 500]
+
 //behaviour files
 const ships = readfile('behaviour/ships')
 const asteroids = readfile('behaviour/asteroids')

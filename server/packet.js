@@ -272,5 +272,15 @@ let msgs = {
         planet.queuesave()
         res.double(this.data.bal)
         res.code(RESP.RESTORE).send()
-    }
+    },
+		[CODE.BUYPACK](data, res){
+			let i = data.ubyte()
+			if(!PACKPRICES[i] || this.data.gems < PACKPRICES[i])return res.code(ERR.BUYPACK).send()
+			if(this.data.packs & (1 << i))return res.code(ERR.BUYPACK).send()
+			this.data.packs |= (1 << i)
+			this.data.gems -= PACKPRICES[i]
+			res.byte(i)
+			res.float(this.data.gems)
+			res.code(RESP.BUYPACK).send()
+		}
 }

@@ -60,7 +60,7 @@ server.on('message', async function(m, remote) {
 								}
 								cli.mission("visit", 1)
                 clients.set(address, cli)
-                let buf = Buffer.alloc(26 + Math.ceil(sector.planets.length / 8))
+                let buf = Buffer.alloc(30 + Math.ceil(sector.planets.length / 8))
                 buf[0] = 129
                 buf[1] = message.critical
                 buf.writeDoubleLE(cli.data.bal || 0, 2)
@@ -78,7 +78,8 @@ server.on('message', async function(m, remote) {
                 }
                 while(b < 255)b <<= 1
                 buf[i++] = b
-								buf.writeFloatLE(sector.time, buf.length - 4)
+								buf.writeFloatLE(sector.time, buf.length - 8)
+								buf.writeInt32LE(cli.data.packs, buf.length - 4)
                 send(buf)
                 cli.crits[message.critical-256] = buf
 								broadcast({title: `User "${name}" joined`, color: 0x2255EE, fields: [{name: "sector", value: sector.name || `(${Math.round(sector.x/1000)}, ${Math.round(sector.y/1000)})`}, {name: "online", value: clients.size+""}]})
@@ -131,7 +132,8 @@ const CODE = {
     SKIPBUILD: 23,
     REPAIR: 26,
     RESTORE: 29,
-    ADWATCHED: 125
+    ADWATCHED: 125,
+		BUYPACK: 122
 }
 const RESP = {
     PONG: 4,
@@ -145,7 +147,8 @@ const RESP = {
     SKIPBUILD: 24,
     REPAIR: 27,
     RESTORE: 30,
-    ADWATCHED: 126
+    ADWATCHED: 126,
+		BUYPACK: 123
 }
 const ERR = {
     PLANETBUY: 13,
@@ -155,5 +158,6 @@ const ERR = {
     SKIPBUILD: 25,
     REPAIR: 28,
     RESTORE: 31,
+		BUYPACK: 124
 }
 
