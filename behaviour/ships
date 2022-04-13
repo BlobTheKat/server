@@ -206,6 +206,28 @@ shootpoints: -20 40, 20 40
 shootvecs: 0, 0
 shootdmgs: 15
 
+mass: 1800
+radius: 18
+speed: 3
+spin: 1.5
+boximg: ship19
+texture: zship19
+shootspeed: 0.1
+shootpoints: -15 40, 15 40
+shootvecs: 0, 0
+shootdmgs: 10
+
+mass: 20000
+radius: 24
+speed: 0.8
+spin: 1
+boximg: ship23
+texture: zship23
+shootspeed: 0.2
+shootpoints: -22 35, 22 35, -8 60, 8 60
+shootvecs: 0, 0, 0, 0
+shootdmgs: 25
+
 mass: 5000
 radius: 22
 speed: 1.2
@@ -238,14 +260,3 @@ shootspeed: 0.3
 shootpoints: -15 40, 15 40
 shootvecs: 0, 0
 shootdmgs: 5
-
-mass: 1800
-radius: 18
-speed: 3
-spin: 1.5
-boximg: ship19
-texture: zship19
-shootspeed: 0.1
-shootpoints: -15 40, 15 40
-shootvecs: 0, 0
-shootdmgs: 10
