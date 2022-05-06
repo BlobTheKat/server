@@ -2,7 +2,7 @@
 //res = response
 //data = data input
 
-const STATSOBJ = {travel: TYPES.FLOAT, planets: TYPES.USHORT}
+const STATSOBJ = {travel: TYPES.FLOAT}
 function processData(data, res){
     let rubber = this.rubber > 0 ? (data.int(),data.int(),data.int(),data.int(),this.rubber--) : this.validate(data)
     let bitfield = data.ubyte()
@@ -49,7 +49,7 @@ function processData(data, res){
             if(p.data.health < 1){
                 //destroyed
                 p.data.health = 2048
-                writeInbox(p.data.owner, "planetlost")
+                writeInbox(p.data.owner, "planetlost", (p.x + sector.x) + ' ' + (p.y + sector.y))
                 p.data.owner = this.playerid
                 p.data.name = this.name
                 this.mission("steal", 1)
@@ -132,14 +132,14 @@ let msgs = {
     [CODE.PLANETBUY](data, res){
         const planet = sector.planets[data.int()]
         if(!planet || (planet.data && planet.data.owner) || planet.superhot)return res.code(ERR.PLANETBUY).send()
-        if(!this.take(100**this.data.stats.planets))return res.code(ERR.PLANETBUY).send()
+        if(!this.take(100**(this.data.planets.length+1)))return res.code(ERR.PLANETBUY).send()
         planet.data = {owner: this.playerid, name: this.name, items: {0: {id: 0, lvl: 1, cap: 0}}, health: 4095, camplvl: 1}
 				planet.queuesave()
         this.mission("planets", 1)
         res.double(this.data.bal)
         res.float(this.data.bal2)
         res.code(RESP.PLANETBUY).send()
-        this.data.stats.planets++
+        this.data.planets.push((planet.x + sector.x) + ' ' + (planet.y + sector.y))
     },
     [CODE.MOVESECTOR](data, res){
         let x = data.float()
@@ -282,5 +282,10 @@ let msgs = {
 			res.byte(i)
 			res.float(this.data.gems)
 			res.code(RESP.BUYPACK).send()
+		},
+		[CODE.GEMS](data, res){
+			this.data.gems += [60,300,1000,5000][data.ubyte()] || 0
+			res.float(this.data.gems)
+			res.code(RESP.GEMS).send()
 		}
 }

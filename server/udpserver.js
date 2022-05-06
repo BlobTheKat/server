@@ -60,24 +60,21 @@ server.on('message', async function(m, remote) {
 								}
 								cli.mission("visit", 1)
                 clients.set(address, cli)
-                let buf = Buffer.alloc(30 + Math.ceil(sector.planets.length / 8))
+                let buf = Buffer.alloc(34 + cli.data.planets.length * 8)
                 buf[0] = 129
                 buf[1] = message.critical
                 buf.writeDoubleLE(cli.data.bal || 0, 2)
                 buf.writeFloatLE(cli.data.bal2 || 0, 10)
                 buf.writeFloatLE(cli.data.gems || 0, 14)
                 buf.writeFloatLE(cli.data.adcd - NOW, 18)
-                let b = 1, i = 22
-                for(let p of sector.planets){
-                    b <<= 1
-                    if(p.data && p.data.owner == cli.playerid)b ^= 1
-                    if(b > 255){
-                        buf[i++] = b
-                        b = 1
-                    }
-                }
-                while(b < 255)b <<= 1
-                buf[i++] = b
+								buf.writeInt32LE(cli.data.planets.length, 22)
+                let i = 22
+								for(let p of cli.data.planets){
+									let [x, y] = p.split(' ')
+									buf.writeInt32LE(+x, i += 4)
+									buf.writeInt32LE(+y, i += 4)
+								}
+								i += 4
 								buf.writeFloatLE(sector.time, buf.length - 8)
 								buf.writeInt32LE(cli.data.packs, buf.length - 4)
                 send(buf)
@@ -133,7 +130,8 @@ const CODE = {
     REPAIR: 26,
     RESTORE: 29,
     ADWATCHED: 125,
-		BUYPACK: 122
+		BUYPACK: 122,
+		GEMS: 119
 }
 const RESP = {
     PONG: 4,
@@ -148,7 +146,8 @@ const RESP = {
     REPAIR: 27,
     RESTORE: 30,
     ADWATCHED: 126,
-		BUYPACK: 123
+		BUYPACK: 123,
+		GEMS: 120
 }
 const ERR = {
     PLANETBUY: 13,
@@ -160,4 +159,3 @@ const ERR = {
     RESTORE: 31,
 		BUYPACK: 124
 }
-

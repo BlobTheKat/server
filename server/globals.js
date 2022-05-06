@@ -47,10 +47,11 @@ let missions = Object.keys(missionStats)
 
 const PLAYERDATA = { //Default player data
   bal: 1000, bal2: 50, gems: 10e3, lvl: 1, xp: 0,
-  stats: {travel: 0, planets: 0},
+  stats: {travel: 0},
   missions: null,
   missionlvls: {},
-  adcd: 0
+  adcd: 0,
+	planets: []
 }
 
 const PI256 = Math.PI / 128

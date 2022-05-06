@@ -11,7 +11,7 @@ async function fetchdata(id){
 		let dat2 = await new Promise(r => fs.readFile("inboxes/" + id, {}, (err, dat) => err ? r('{}') : r(dat)))
 		let r = [JSON.parse(dat), JSON.parse(dat2)] //send data
 		fs.unlink("inboxes/"+id, () => {})
-		return r
+		console.log(r)
 	}catch(e){
 		console.log(e)
 		return [{},{}] //If no/corrupt file, then send empty object
@@ -20,7 +20,11 @@ async function fetchdata(id){
 
 function inbox(ship, data){
 	if(data.planetsLost){
-		ship.data.stats.planets -= data.planetsLost
+		for(let loc of data.planetsLost){
+			let i = ship.data.planets.indexOf(loc)
+			if(i < 0)continue
+			ship.data.planets.splice(i, 1)
+		}
 	}
 }
 
@@ -30,7 +34,7 @@ async function writeInbox(id, name, dat = null){ //transaction name and transact
 		data = JSON.parse(await new Promise(r => fs.readFile('inboxes/'+id, {}, (err, dat) => r(err ? {} : dat))))
 	}catch(e){ data = {} }
 	if(name == 'planetlost'){
-		data.planetsLost = (data.planetsLost || 0) + 1
+		(data.planetsLost = (data.planetsLost || [])).push(dat)
 	}
 	fs.writeFile('inboxes/'+id, JSON.stringify(data), () => {})
 }
