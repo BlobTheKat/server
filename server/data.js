@@ -11,9 +11,8 @@ async function fetchdata(id){
 		let dat2 = await new Promise(r => fs.readFile("inboxes/" + id, {}, (err, dat) => err ? r('{}') : r(dat)))
 		let r = [JSON.parse(dat), JSON.parse(dat2)] //send data
 		fs.unlink("inboxes/"+id, () => {})
-		console.log(r)
+		return r
 	}catch(e){
-		console.log(e)
 		return [{},{}] //If no/corrupt file, then send empty object
 	}
 }
