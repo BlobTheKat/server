@@ -51,7 +51,8 @@ const PLAYERDATA = { //Default player data
   missions: null,
   missionlvls: {},
   adcd: 0,
-	planets: []
+	planets: [],
+	packs: 1
 }
 
 const PI256 = Math.PI / 128
